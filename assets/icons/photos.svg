@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs><filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur stdDeviation="7"/></filter>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe4ec"/></linearGradient>
+<linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d86ff"/><stop offset="1" stop-color="#bfe6ff"/></linearGradient>
+<linearGradient id="duskg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a1f7a"/><stop offset="0.6" stop-color="#e0577a"/><stop offset="1" stop-color="#ffb35a"/></linearGradient>
+<linearGradient id="meadowg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd6ff"/><stop offset="0.45" stop-color="#d7f2ff"/><stop offset="0.46" stop-color="#4cb050"/><stop offset="1" stop-color="#2c7d36"/></linearGradient>
+</defs>
+<g transform="rotate(-15 214 214)">
+ <rect x="83.0" y="114.0" width="270" height="220" rx="5" fill="#000" opacity="0.4" filter="url(#sh)"/>
+ <rect x="79.0" y="104.0" width="270" height="220" rx="5" fill="url(#paper)" stroke="#aab2c0" stroke-width="1.5"/>
+ <clipPath id="c1"><rect x="97.0" y="122.0" width="234" height="166"/></clipPath>
+ <g clip-path="url(#c1)"><rect x="97.0" y="122.0" width="234" height="166" fill="url(#duskg)"/>
+<path d="M97.0 254.8 L167.2 188.4 L214.0 238.2 L265.48 171.8 L331.0 246.5 V288.0 H97.0 Z" fill="#2b2a5e"/></g>
+ <rect x="97.0" y="122.0" width="234" height="166" fill="none" stroke="#000" stroke-opacity="0.25" stroke-width="1.5"/>
+</g>
+<g transform="rotate(9 300 225)">
+ <rect x="169.0" y="125.0" width="270" height="220" rx="5" fill="#000" opacity="0.4" filter="url(#sh)"/>
+ <rect x="165.0" y="115.0" width="270" height="220" rx="5" fill="url(#paper)" stroke="#aab2c0" stroke-width="1.5"/>
+ <clipPath id="c2"><rect x="183.0" y="133.0" width="234" height="166"/></clipPath>
+ <g clip-path="url(#c2)"><rect x="183.0" y="133.0" width="234" height="166" fill="url(#meadowg)"/>
+<circle cx="253.2" cy="224.3" r="19.919999999999998" fill="#ff5b6e"/><circle cx="311.70000000000005" cy="240.9" r="16.6" fill="#ffd23f"/><circle cx="365.52" cy="216.0" r="18.26" fill="#ff8c3a"/></g>
+ <rect x="183.0" y="133.0" width="234" height="166" fill="none" stroke="#000" stroke-opacity="0.25" stroke-width="1.5"/>
+</g>
+<g transform="rotate(-3 248 262)">
+ <rect x="107.0" y="152.0" width="290" height="240" rx="5" fill="#000" opacity="0.4" filter="url(#sh)"/>
+ <rect x="103.0" y="142.0" width="290" height="240" rx="5" fill="url(#paper)" stroke="#aab2c0" stroke-width="1.5"/>
+ <clipPath id="c3"><rect x="121.0" y="160.0" width="254" height="186"/></clipPath>
+ <g clip-path="url(#c3)"><rect x="121.0" y="160.0" width="254" height="186" fill="url(#skyg)"/>
+<circle cx="308.96000000000004" cy="215.8" r="24.18" fill="#ffe27a"/>
+<path d="M121.0 305.08000000000004 C197.2 243.7 260.70000000000005 336.7 375.0 271.6 V346.0 H121.0 Z" fill="#3fa84a"/>
+<path d="M121.0 327.4 C222.60000000000002 280.9 298.79999999999995 346.0 375.0 312.52 V346.0 H121.0 Z" fill="#2a8a3c"/></g>
+ <rect x="121.0" y="160.0" width="254" height="186" fill="none" stroke="#000" stroke-opacity="0.25" stroke-width="1.5"/>
+</g>
+</svg>

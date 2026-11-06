@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b1b4d"/><stop offset="0.55" stop-color="#3d2b86"/><stop offset="1" stop-color="#8e4fb5"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2160"/><stop offset="1" stop-color="#150f38"/></linearGradient>
+    <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b2a7c"/><stop offset="1" stop-color="#1d1448"/></linearGradient>
+    <linearGradient id="tent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff9f4a"/><stop offset="1" stop-color="#e5602a"/></linearGradient>
+    <linearGradient id="tent2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c2461f"/><stop offset="1" stop-color="#8f2f17"/></linearGradient>
+    <radialGradient id="door" cx="0.5" cy="0.9" r="0.9"><stop offset="0" stop-color="#fff2b0"/><stop offset="1" stop-color="#ffb43d"/></radialGradient>
+    <radialGradient id="moonglow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff6c8" stop-opacity="0.55"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></radialGradient>
+    <clipPath id="card"><rect x="8" y="8" width="112" height="112" rx="26"/></clipPath>
+    <mask id="cres" maskUnits="userSpaceOnUse" x="60" y="10" width="64" height="56"><rect x="60" y="10" width="64" height="56" fill="#fff"/><circle cx="98" cy="33" r="12" fill="#000"/></mask>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect x="9" y="12" width="110" height="110" rx="26" fill="#000" opacity="0.30" filter="url(#blur)"/>
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#sky)"/>
+  <g clip-path="url(#card)">
+    <!-- moon with glow -->
+    <circle cx="92" cy="38" r="26" fill="url(#moonglow)"/>
+    <circle cx="92" cy="38" r="13" fill="#fff4c2" mask="url(#cres)"/>
+    <!-- stars -->
+    <g fill="#ffffff">
+      <circle cx="26" cy="26" r="1.6"/><circle cx="46" cy="18" r="1.1" opacity="0.8"/><circle cx="62" cy="34" r="1.4"/>
+      <circle cx="20" cy="50" r="1.1" opacity="0.7"/><circle cx="40" cy="42" r="1.8"/><circle cx="72" cy="20" r="1.2" opacity="0.85"/>
+      <circle cx="108" cy="62" r="1.2" opacity="0.7"/><circle cx="56" cy="54" r="1" opacity="0.7"/><circle cx="30" cy="68" r="1" opacity="0.6"/>
+      <path d="M52 26 l1.2 3.2 3.2 1.2 -3.2 1.2 -1.2 3.2 -1.2 -3.2 -3.2 -1.2 3.2 -1.2z" opacity="0.95"/>
+      <path d="M78 52 l0.9 2.4 2.4 0.9 -2.4 0.9 -0.9 2.4 -0.9 -2.4 -2.4 -0.9 2.4 -0.9z" opacity="0.9"/>
+    </g>
+    <!-- distant hills -->
+    <path d="M8 96 C30 80 48 84 66 92 C86 78 104 80 120 90 V120 H8 Z" fill="url(#hill2)"/>
+    <!-- tent -->
+    <ellipse cx="62" cy="104" rx="34" ry="4" fill="#000" opacity="0.3"/>
+    <polygon points="62,60 28,104 96,104" fill="url(#tent)"/>
+    <polygon points="62,60 62,104 96,104" fill="url(#tent2)"/>
+    <polygon points="62,60 62,104 28,104" fill="#fff" opacity="0.08"/>
+    <path d="M62 60 L50 104 H74 Z" fill="url(#door)"/>
+    <path d="M62 60 L50 104 M62 60 L74 104" stroke="#7a2a12" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+    <path d="M62 60 V56" stroke="#6b4a2a" stroke-width="2" stroke-linecap="round"/>
+    <path d="M62 56 L72 59 L62 62 Z" fill="#ffd24a"/>
+    <!-- foreground -->
+    <path d="M8 108 C34 98 56 106 80 108 C98 110 110 104 120 100 V120 H8 Z" fill="url(#hill)"/>
+  </g>
+  <rect x="8" y="8" width="112" height="56" rx="26" fill="url(#gloss)"/>
+  <rect x="8.5" y="8.5" width="111" height="111" rx="25.5" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
+</svg>

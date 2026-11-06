@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Marquee Share</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0a16;--card:#171428;--line:#2a2548;--fg:#f2f0ff;--dim:#9a96bd;--acc:#a78bfa}
+*{box-sizing:border-box}body{margin:0;font:16px/1.45 system-ui,sans-serif;background:linear-gradient(#14102b,#05050c) fixed;color:var(--fg)}
+main{max-width:920px;margin:0 auto;padding:32px 20px 80px}h1{font-size:28px;margin:0 0 4px}p.sub{color:var(--dim);margin:0 0 28px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:20px}h2{margin:0 0 14px;font-size:18px}
+.lib{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}.lib:first-of-type{border-top:0}
+.lib small{color:var(--dim);display:block;word-break:break-all}
+button{background:var(--acc);color:#120d2b;border:0;border-radius:8px;padding:8px 14px;font-weight:600;cursor:pointer}button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+input,select{background:#0f0c20;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}.browser{border:1px solid var(--line);border-radius:10px;max-height:300px;overflow:auto;background:#0f0c20}
+.item{display:flex;align-items:center;gap:10px;padding:7px 12px;cursor:pointer;border-bottom:1px solid #1d1938}.item:hover{background:#1c1738}
+.path{color:var(--dim);font-size:14px;margin:0 0 8px;word-break:break-all}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:#241e45;border-radius:999px;padding:4px 12px;font-size:14px}.chip b{cursor:pointer;margin-left:8px;color:var(--dim)}
+.empty{color:var(--dim)}
+</style></head><body><main>
+<h1>Marquee Share</h1>
+<p class="sub">Choose folders or individual videos, music and photos. Other computers running Marquee will find them under <b>Network</b>.</p>
+<section><h2>Your libraries</h2><div id="libs"></div></section>
+<section><h2>New library</h2>
+<div class="row"><input id="name" placeholder="Library name" size="24"><select id="kind"><option value="movies">Movies / videos</option><option value="music">Music</option><option value="photos">Photos</option></select></div>
+<p class="path" id="cwd"></p>
+<div class="row"><button class="ghost" id="up">↑ Up</button><button id="addfolder">Add this folder</button></div>
+<div class="browser" id="browser"></div>
+<div class="chips" id="chips"></div>
+<button id="create">Create library</button> <span id="msg" class="empty"></span>
+</section></main>
+<script>
+const $=id=>document.getElementById(id);let cwd=null,parent=null,picked=[];
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function libs(){const r=await (await fetch('/admin/libs')).json();$('libs').innerHTML=r.length?r.map(l=>`<div class="lib"><div><b>${esc(l.name)}</b> · ${l.kind}<small>${l.paths.map(esc).join('<br>')}</small></div><button class="ghost" onclick="del('${l.id}')">Remove</button></div>`).join(''):'<span class="empty">No libraries yet.</span>'}
+async function del(id){await fetch('/admin/delete?id='+id,{method:'POST'});libs()}
+async function browse(p){const r=await (await fetch('/admin/fs'+(p?'?path='+encodeURIComponent(p):''))).json();cwd=r.path;parent=r.parent;$('cwd').textContent=cwd;
+$('browser').innerHTML=r.dirs.map(d=>`<div class="item" data-dir="${esc(d.path)}">📁 ${esc(d.name)}</div>`).join('')+r.files.map(f=>`<div class="item" data-file="${esc(f.path)}">🎞 ${esc(f.name)} <span class="empty">— click to add</span></div>`).join('')||'<div class="item empty">Empty</div>';
+document.querySelectorAll('[data-dir]').forEach(e=>e.onclick=()=>browse(e.dataset.dir));document.querySelectorAll('[data-file]').forEach(e=>e.onclick=()=>pick(e.dataset.file))}
+function pick(p){if(!picked.includes(p))picked.push(p);chips()}
+function chips(){$('chips').innerHTML=picked.map((p,i)=>`<span class="chip">${esc(p.split(/[\\/]/).pop())}<b onclick="picked.splice(${i},1);chips()">×</b></span>`).join('')}
+$('up').onclick=()=>parent&&browse(parent);$('addfolder').onclick=()=>pick(cwd);
+$('create').onclick=async()=>{if(!picked.length){$('msg').textContent='Pick at least one folder or file first.';return}
+const r=await fetch('/admin/libs',{method:'POST',body:JSON.stringify({name:$('name').value||'Library',kind:$('kind').value,paths:picked})});
+if(r.ok){picked=[];chips();$('name').value='';$('msg').textContent='Created. It is now visible on your network.';libs()}else $('msg').textContent=await r.text()}
+libs();browse();
+</script></body></html>

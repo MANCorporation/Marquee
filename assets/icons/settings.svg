@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs><filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur stdDeviation="7"/></filter>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+<linearGradient id="metal" x1="0.15" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.3" stop-color="#d6dbe3"/><stop offset="0.6" stop-color="#8f96a3"/><stop offset="1" stop-color="#4a505b"/></linearGradient>
+<linearGradient id="metal2" x1="0.85" y1="0" x2="0.15" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.45" stop-color="#b9c0cb"/><stop offset="1" stop-color="#5b616d"/></linearGradient>
+<radialGradient id="holeg" cx="0.5" cy="0.4" r="0.7"><stop offset="0" stop-color="#1b2230"/><stop offset="1" stop-color="#000"/></radialGradient>
+<linearGradient id="spec" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<path d="M406.0,214.0 L405.4,227.2 L445.8,242.8 L440.0,268.7 L396.8,265.7 L377.4,302.2 L377.4,302.2 L369.1,312.5 L392.6,348.9 L372.7,366.4 L339.5,338.6 L302.4,356.7 L302.4,356.7 L289.6,360.2 L287.2,403.4 L260.8,405.9 L250.3,363.9 L209.6,356.7 L209.6,356.7 L197.3,352.0 L169.9,385.6 L147.1,372.1 L163.3,331.9 L134.6,302.2 L134.6,302.2 L127.4,291.2 L85.5,302.2 L74.9,277.9 L111.7,254.9 L106.0,214.0 L106.0,214.0 L106.6,200.8 L66.2,185.2 L72.0,159.3 L115.2,162.3 L134.6,125.8 L134.6,125.8 L142.9,115.5 L119.4,79.1 L139.3,61.6 L172.5,89.4 L209.6,71.3 L209.6,71.3 L222.4,67.8 L224.8,24.6 L251.2,22.1 L261.7,64.1 L302.4,71.3 L302.4,71.3 L314.7,76.0 L342.1,42.4 L364.9,55.9 L348.7,96.1 L377.4,125.8 L377.4,125.8 L384.6,136.8 L426.5,125.8 L437.1,150.1 L400.3,173.1 L406.0,214.0 Z" transform="translate(8 14)" fill="#000" opacity="0.45" filter="url(#sh)"/>
+<path d="M406.0,214.0 L405.4,227.2 L445.8,242.8 L440.0,268.7 L396.8,265.7 L377.4,302.2 L377.4,302.2 L369.1,312.5 L392.6,348.9 L372.7,366.4 L339.5,338.6 L302.4,356.7 L302.4,356.7 L289.6,360.2 L287.2,403.4 L260.8,405.9 L250.3,363.9 L209.6,356.7 L209.6,356.7 L197.3,352.0 L169.9,385.6 L147.1,372.1 L163.3,331.9 L134.6,302.2 L134.6,302.2 L127.4,291.2 L85.5,302.2 L74.9,277.9 L111.7,254.9 L106.0,214.0 L106.0,214.0 L106.6,200.8 L66.2,185.2 L72.0,159.3 L115.2,162.3 L134.6,125.8 L134.6,125.8 L142.9,115.5 L119.4,79.1 L139.3,61.6 L172.5,89.4 L209.6,71.3 L209.6,71.3 L222.4,67.8 L224.8,24.6 L251.2,22.1 L261.7,64.1 L302.4,71.3 L302.4,71.3 L314.7,76.0 L342.1,42.4 L364.9,55.9 L348.7,96.1 L377.4,125.8 L377.4,125.8 L384.6,136.8 L426.5,125.8 L437.1,150.1 L400.3,173.1 L406.0,214.0 Z" fill="url(#metal)" stroke="#3b414c" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="256" cy="214" r="122" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="3"/>
+<circle cx="256" cy="214" r="116" fill="url(#metal2)" stroke="#5b616d" stroke-width="2"/>
+<circle cx="256" cy="214" r="78" fill="url(#metal)" stroke="#3b414c" stroke-width="2.5"/>
+<circle cx="256" cy="214" r="66" fill="url(#holeg)" stroke="#e8ecf3" stroke-width="3"/>
+<path d="M100 150 C140 80 220 50 300 62 C220 70 150 110 120 190 Z" fill="url(#spec)" opacity="0.6"/>
+</svg>

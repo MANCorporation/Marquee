@@ -1,0 +1,33 @@
+[package]
+name = "marquee"
+version = "0.1.0"
+edition = "2021"
+description = "Marquee: a living-room media centre (Rust; descended from a port of JacksonDam/FirstRow)"
+license-file = "LICENSE"
+publish = false
+
+[dependencies]
+macroquad = { version = "0.4.14", default-features = false }
+rodio = { version = "0.21", default-features = false, features = ["playback", "symphonia-all"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+lofty = "0.22"
+walkdir = "2"
+dirs = "5"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rand = "0.8"
+ureq = { version = "2", features = ["json"] }
+tiny_http = "0.12"
+resvg = { version = "0.45", default-features = false }
+
+[[bin]]
+name = "marquee"
+path = "src/main.rs"
+
+[[bin]]
+name = "marquee-share"
+path = "src/bin/share.rs"
+
+[profile.release]
+opt-level = 3
+lto = "thin"

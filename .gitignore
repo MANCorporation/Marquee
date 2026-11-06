@@ -1,0 +1,4 @@
+dist/Marquee.app
+dist
+target/release
+target/debug
